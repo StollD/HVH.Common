@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using log4net.Config;
 
 [assembly: AssemblyTitle("HVH.Common")]
 [assembly: AssemblyDescription("Common code shared between HVH.Service and HVH.Client")]

@@ -6,7 +6,7 @@
 
 using System;
 
-namespace HVH.Service.Interfaces
+namespace HVH.Common.Interfaces
 {
     /// <summary>
     /// Provides an interface for encoding data

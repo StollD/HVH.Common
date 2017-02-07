@@ -7,7 +7,7 @@
 using System;
 using MadMilkman.Ini;
 
-namespace HVH.Service.Settings
+namespace HVH.Common.Settings
 {
     [SectionName("connection")]
     public class ConnectionSettings : Settings<ConnectionSettings>

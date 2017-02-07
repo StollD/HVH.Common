@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace HVH.Service.Plugins
+namespace HVH.Common.Plugins
 {
     /// <summary>
     /// Loads plugins from a plugins directory, and manages access to the types inside of the assemblies

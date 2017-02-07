@@ -11,7 +11,7 @@ using Helios.Net;
 using Helios.Net.Bootstrap;
 using Helios.Topology;
 
-namespace HVH.Service.Connection
+namespace HVH.Common.Connection
 {
     public class ConnectionWorker
     {

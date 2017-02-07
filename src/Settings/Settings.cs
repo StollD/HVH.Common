@@ -7,11 +7,11 @@
 using System;
 using System.IO;
 using System.Reflection;
-using HVH.Service.Exceptions;
+using HVH.Common.Exceptions;
 using log4net;
 using MadMilkman.Ini;
 
-namespace HVH.Service.Settings
+namespace HVH.Common.Settings
 {
     /// <summary>
     /// Provides a base class for settings

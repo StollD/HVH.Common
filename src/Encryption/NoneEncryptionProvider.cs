@@ -6,9 +6,9 @@
 
 using System;
 using System.Security.Cryptography;
-using HVH.Service.Interfaces;
+using HVH.Common.Interfaces;
 
-namespace HVH.Service.Encryption
+namespace HVH.Common.Encryption
 {
     /// <summary>
     /// IEncryptionProvider shim for no encryption

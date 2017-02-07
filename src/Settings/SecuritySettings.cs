@@ -7,7 +7,7 @@
 using System;
 using MadMilkman.Ini;
 
-namespace HVH.Service.Settings
+namespace HVH.Common.Settings
 {
     [SectionName("security")]
     public class SecuritySettings : Settings<SecuritySettings>

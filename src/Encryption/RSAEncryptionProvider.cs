@@ -6,14 +6,14 @@
 
 using System;
 using System.Security.Cryptography;
-using HVH.Service.Interfaces;
+using HVH.Common.Interfaces;
 
-namespace HVH.Service.Encryption
+namespace HVH.Common.Encryption
 {
     /// <summary>
     /// Encrypts data using RSA keys - internal use only
     /// </summary>
-    internal class RSAEncryptionProvider : IEncryptionProvider 
+    public class RSAEncryptionProvider : IEncryptionProvider 
     {
         /// <summary>
         /// A RSA that is used to encrypt the 

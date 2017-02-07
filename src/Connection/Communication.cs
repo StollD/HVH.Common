@@ -6,7 +6,7 @@
 
 using System;
 
-namespace HVH.Service.Connection
+namespace HVH.Common.Connection
 {
     /// <summary>
     /// The communication protocol for Client and Server

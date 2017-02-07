@@ -6,7 +6,7 @@
 
 using System;
 
-namespace HVH.Service.Exceptions
+namespace HVH.Common.Exceptions
 {
     /// <summary>
     /// Exception that indicates an invalid settings file
