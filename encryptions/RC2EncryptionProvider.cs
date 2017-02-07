@@ -6,38 +6,34 @@
 
 using System;
 using System.Security.Cryptography;
+using System.Text;
 using HVH.Common.Interfaces;
 
-namespace HVH.Common.Encryption
+namespace HVH.Common.Encryptions
 {
     /// <summary>
-    /// Encrypts data using RSA keys - internal use only
+    /// Provides encryption through RC2
     /// </summary>
-    public class RSAEncryptionProvider : IEncryptionProvider 
+    public class RC2EncryptionProvider : IEncryptionProvider
     {
         /// <summary>
-        /// A RSA that is used to encrypt the 
+        /// The underlying key
         /// </summary>
-        public RSACryptoServiceProvider key;
-
-        public RSAEncryptionProvider(Int32 keySize)
-        {
-            key = new RSACryptoServiceProvider(keySize);
-        }
+        private String key;
 
         public Byte[] Encrypt(Byte[] data)
         {
-            return key.Encrypt(data, false);
+            return Cryptography.Encrypt<RC2CryptoServiceProvider>(data, key);
         }
 
         public Byte[] Decrypt(Byte[] data)
         {
-            return key.Decrypt(data, false);
+            return Cryptography.Decrypt<RC2CryptoServiceProvider>(data, key);
         }
 
         public void ChangeKey(Byte[] newKey)
         {
-            // ignored
+            key = Encoding.UTF8.GetString(newKey);
         }
     }
 }

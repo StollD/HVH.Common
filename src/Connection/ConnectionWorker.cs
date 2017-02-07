@@ -1,5 +1,5 @@
 ﻿/**
- * HVH.Service - Service that can manage client computers
+ * HVH.Common - Common code that is shared between the projects
  * Copyright (c) Dorian Stoll 2017
  * Licensed under the terms of the MIT License
  */
