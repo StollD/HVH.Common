@@ -124,6 +124,11 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String CLIENT_SEND_USERDATA = "0fbd883b9fbc4b95b6f3f217e6a85d64";
 
+        /// <summary>
+        /// Client wants to disconnect from the server
+        /// </summary>
+        public const String CLIENT_SEND_DISCONNECT = "06b0a313af244b8dbd2b1e3c4c617dfc";
+
         /**
          * -> Client Connects to Server
          * -> CLIENT_SEND_PUBLIC_KEY -- Public Key
