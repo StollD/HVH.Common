@@ -129,6 +129,11 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String CLIENT_SEND_DISCONNECT = "06b0a313af244b8dbd2b1e3c4c617dfc";
 
+        /// <summary>
+        /// Client sends a signal that he is still alive
+        /// </summary>
+        public const String CLIENT_SEND_HEARTBEAT = "089b11b6331945afa99bb689e7d5d9a3";
+
         /**
          * -> Client Connects to Server
          * -> CLIENT_SEND_PUBLIC_KEY -- Public Key
