@@ -18,6 +18,8 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String Empty = "Empty";
 
+        // ====== DAEMON ======= //
+
         /// <summary>
         /// Indentification ID for the program
         /// </summary>
@@ -42,6 +44,8 @@ namespace HVH.Common.Connection
         /// Service disconnects from the server
         /// </summary>
         public const String DAEMON_SEND_DISCONNECT = "7afca47069b949b285f91c6fa0fc3b65";
+
+        // ====== SERVER ======= //
 
         /// <summary>
         /// Identification ID for the server program
@@ -102,6 +106,23 @@ namespace HVH.Common.Connection
         /// Server sends the command to unlock the client pc
         /// </summary>
         public const String SERVER_SEND_UNLOCK = "b369a2aa5bbc46a59bd1bcde6bb6bb63";
+
+        // ====== CLIENT ====== //
+
+        /// <summary>
+        /// Identification ID for the client program
+        /// </summary>
+        public const String CLIENT_ID = "2a2b2c21f37c48d48e3bf41583d74d8f";
+
+        /// <summary>
+        /// Client sends his RSA Public Key
+        /// </summary>
+        public const String CLIENT_SEND_PUBLIC_KEY = "d858ed23b1f7426891c5471208e73550";
+        
+        /// <summary>
+        /// Client is going to send his session data
+        /// </summary>
+        public const String CLIENT_SEND_USERDATA = "0fbd883b9fbc4b95b6f3f217e6a85d64";
 
         /**
          * -> Client Connects to Server
