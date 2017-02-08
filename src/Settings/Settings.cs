@@ -32,21 +32,28 @@ namespace HVH.Common.Settings
             {
                 if (_instance == null)
                 {
-                    // Load the settings file
-                    IniFile file = new IniFile();
-                    file.Load(Directory.GetCurrentDirectory() + "/settings.ini");
-                    SectionNameAttribute[] att = typeof(T).GetCustomAttributes(typeof(SectionNameAttribute), false) as SectionNameAttribute[];
-                    IniSection section = file.Sections[att[0].name];
-
-                    // Nullcheck
-                    if (section == null)
+                    try
                     {
-                        log.Fatal("Settings file (settings.ini) is invalid");
-                        throw new InvalidSettingsFileException();
-                    }
+                        // Load the settings file
+                        IniFile file = new IniFile();
+                        file.Load(Directory.GetCurrentDirectory() + "/settings.ini");
+                        SectionNameAttribute[] att = typeof(T).GetCustomAttributes(typeof(SectionNameAttribute), false) as SectionNameAttribute[];
+                        IniSection section = file.Sections[att[0].name];
 
-                    // Serialize the data
-                    _instance = section.Deserialize<T>();
+                        // Nullcheck
+                        if (section == null)
+                        {
+                            log.Fatal("Settings file (settings.ini) is invalid");
+                            throw new InvalidSettingsFileException();
+                        }
+
+                        // Serialize the data
+                        _instance = section.Deserialize<T>();
+                    }
+                    catch (Exception e)
+                    {
+                        log.Fatal("Exception while loading the settings file", e);
+                    }
                 }
                 
                 // Return the internal representation
