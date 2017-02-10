@@ -27,6 +27,7 @@ namespace HVH.Common.Plugins
             // Create the list and add the own assembly
             assemblies = new List<Assembly>();
             assemblies.Add(typeof(PluginManager).Assembly);
+            assemblies.Add(Assembly.GetCallingAssembly());
 
             // Does the directory exist?
             if (!Directory.Exists(Directory.GetCurrentDirectory() + "/plugins/"))
@@ -37,6 +38,17 @@ namespace HVH.Common.Plugins
             {
                 assemblies.Add(Assembly.Load(File.ReadAllBytes(file)));
             }
+
+            // Lookup
+            AppDomain.CurrentDomain.AssemblyResolve += delegate(Object sender, ResolveEventArgs args)
+            {
+                foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    if (assembly.FullName == args.Name)
+                        return assembly;
+                }
+                return null;
+            };
         }
 
         /// <summary>
@@ -46,7 +58,7 @@ namespace HVH.Common.Plugins
         {
             foreach (Type t in assemblies.SelectMany(a => a.GetTypes()))
             {
-                if (t.Name == name && t.IsSubclassOf(typeof(T)) && t.IsPublic)
+                if (t.Name == name && t.GetInterface(typeof(T).Name) != null && t.IsPublic)
                     return t;
             }
 

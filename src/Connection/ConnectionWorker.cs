@@ -9,6 +9,7 @@ using System.Net;
 using Helios.Exceptions;
 using Helios.Net;
 using Helios.Net.Bootstrap;
+using Helios.Net.Connections;
 using Helios.Topology;
 
 namespace HVH.Common.Connection
@@ -18,7 +19,7 @@ namespace HVH.Common.Connection
         /// <summary>
         /// The connection to the server
         /// </summary>
-        public IConnection Client { get; private set; }
+        public TcpConnection Client { get; private set; }
 
         /// <summary>
         /// The node for the server connection
@@ -57,7 +58,7 @@ namespace HVH.Common.Connection
 
             // Create the client
             RemoteHost = NodeBuilder.BuildNode().Host(Server).WithPort(port).WithTransportType(TransportType.Tcp);
-            Client = new ClientBootstrap()
+            Client = (TcpConnection) new ClientBootstrap()
                 .SetTransport(TransportType.Tcp)
                 .RemoteAddress(RemoteHost)
                 .OnConnect(ConnectionEstablishedCallback)
@@ -65,6 +66,9 @@ namespace HVH.Common.Connection
                 .OnDisconnect(ConnectionTerminatedCallback)
                 .Build()
                 .NewConnection(NodeBuilder.BuildNode().Host(IPAddress.Any).WithPort(port), RemoteHost);
+            Client.NoDelay = true;
+            Client.ReceiveBufferSize = 8192;
+            Client.Open();
         }
 
         private void ConnectionTerminatedCallback(HeliosConnectionException reason, IConnection closedchannel)
