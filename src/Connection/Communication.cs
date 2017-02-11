@@ -107,6 +107,21 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String SERVER_SEND_UNLOCK = "b369a2aa5bbc46a59bd1bcde6bb6bb63";
 
+        /// <summary>
+        /// Login data was wrong
+        /// </summary>
+        public const String SERVER_SEND_LOGIN_INVALID = "10ff071cbadc425d81f2b6ce662963f0";
+
+        /// <summary>
+        /// Login request was successful
+        /// </summary>
+        public const String SERVER_SEND_LOGIN_SUCCESS = "b2d28458647f49bc8e5406d8a3d24e46";
+
+        /// <summary>
+        /// Login cant be completed because no login servers are online
+        /// </summary>
+        public const String SERVER_SEND_NO_LOGIN_SERVERS = "b9520c196fed4062aed9fb07bcbb848b";
+
         // ====== CLIENT ====== //
 
         /// <summary>
@@ -133,6 +148,18 @@ namespace HVH.Common.Connection
         /// Client sends a signal that he is still alive
         /// </summary>
         public const String CLIENT_SEND_HEARTBEAT = "089b11b6331945afa99bb689e7d5d9a3";
+
+        /// <summary>
+        /// Client tries to login on the server
+        /// </summary>
+        public const String CLIENT_SEND_LOGIN_REQUEST = "eb8086805a26417e9b6d0217ee3c6aa5";
+
+        /// <summary>
+        /// Client tries to logout on the server
+        /// </summary>
+        public const String CLIENT_SEND_LOGOUT_REQUEST = "f4546b97b0284368acbfc3d1156ca3a0";
+
+
 
         /**
          * -> Client Connects to Server
