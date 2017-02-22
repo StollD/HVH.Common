@@ -122,6 +122,36 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String SERVER_SEND_NO_LOGIN_SERVERS = "b9520c196fed4062aed9fb07bcbb848b";
 
+        /// <summary>
+        /// Server sends a list of rooms the client can access
+        /// </summary>
+        public const String SERVER_SEND_ROOMS = "d4bffbcede9a4db3b6bdba08cca15a5a";
+
+        /// <summary>
+        /// Server sends that all rooms where transmitted
+        /// </summary>
+        public const String SERVER_SEND_ROOMS_FINISHED = "d2164ebe9f9d4bd2b1044221f939d928";
+        
+        /// <summary>
+        /// Server starts sending a list of started clients
+        /// </summary>
+        public const String SERVER_SEND_STARTED_CLIENTS = "cab3678e90ba4083884442eb264742dc";
+
+        /// <summary>
+        /// Sever sent a list of started clients
+        /// </summary>
+        public const String SERVER_SEND_STARTED_CLIENTS_FINISHED = "a613723ddad64acab8b341cf136660c4";
+
+        /// <summary>
+        /// Server starts sending a list of locked clients
+        /// </summary>
+        public const String SERVER_SEND_LOCKED_CLIENTS = "25e6c186498c4a95a4735dc61a23e3e0";
+
+        /// <summary>
+        /// Server sent a list of locked clients
+        /// </summary>
+        public const String SERVER_SEND_LOCKED_CLIENTS_FINISHED = "ae85e61ef47046008316294901c37e17";
+
         // ====== CLIENT ====== //
 
         /// <summary>
@@ -159,7 +189,60 @@ namespace HVH.Common.Connection
         /// </summary>
         public const String CLIENT_SEND_LOGOUT_REQUEST = "f4546b97b0284368acbfc3d1156ca3a0";
 
+        /// <summary>
+        /// Client asks for the available rooms on the server
+        /// </summary>
+        public const String CLIENT_SEND_ROOMS_REQUEST = "cc95c12cf2c940a688ee3d7b57dee084";
 
+        /// <summary>
+        /// Client asks for a list of started computers
+        /// </summary>
+        public const String CLIENT_SEND_STARTED_CLIENTS_REQUEST = "59fcfe339b8342498ea11243d4ae479d";
+
+        /// <summary>
+        /// Client asks for a list of locked computers
+        /// </summary>
+        public const String CLIENT_SEND_LOCKED_CLIENTS_REQUEST = "88d10353d5234c34a9a35172fc0e66ef";
+        
+        /// <summary>
+        /// Client sends a list of computers to lock
+        /// </summary>
+        public const String CLIENT_SEND_LOCK_COMPUTERS = "fbe9d76ea21240008e53564c46fcab73";
+
+        /// <summary>
+        /// Client sent a list of computers to lock
+        /// </summary>
+        public const String CLIENT_SEND_LOCK_COMPUTERS_FINISHED = "fde280aaae754650b39f2e5f8ba70d0d";
+
+        /// <summary>
+        /// Client sends a list of computers to unlock
+        /// </summary>
+        public const String CLIENT_SEND_UNLOCK_COMPUTERS = "55455e374cee41979d284f73dde22904";
+
+        /// <summary>
+        /// Client sent a list of computers to unlock
+        /// </summary>
+        public const String CLIENT_SEND_UNLOCK_COMPUTERS_FINISHED = "d28feb7530b941eeafbd97d5d2361e8b";
+
+        /// <summary>
+        /// Client sends a list of computers to shutdown
+        /// </summary>
+        public const String CLIENT_SEND_SHUTDOWN_COMPUTERS = "6158ee8f31ff4dfd8064647e3a69b030";
+
+        /// <summary>
+        /// Client sent a list of computers to shutdown
+        /// </summary>
+        public const String CLIENT_SEND_SHUTDOWN_COMPUTERS_FINISHED = "d79a5397442b4993a3db71f4b26284f0";
+
+        /// <summary>
+        /// Client sends a list of computers to restart
+        /// </summary>
+        public const String CLIENT_SEND_RESTART_COMPUTERS = "777b68591d0e4ac3afcf5018c59bfe22";
+
+        /// <summary>
+        /// Client sent a list of computers to restart
+        /// </summary>
+        public const String CLIENT_SEND_RESTART_COMPUTERS_FINISHED = "865a1dd6b2394a6cb5017093f06b77bc";
 
         /**
          * -> Client Connects to Server
