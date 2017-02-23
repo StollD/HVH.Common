@@ -21,6 +21,11 @@ namespace HVH.Common.Plugins
         /// All assemblies, including the service assembly
         /// </summary>
         private static List<Assembly> assemblies;
+        
+        public static String CurrentDirectory
+        {
+            get { return Path.GetDirectoryName(typeof(PluginManager).Assembly.Location); }
+        }
 
         public static void LoadPlugins()
         {
@@ -30,11 +35,11 @@ namespace HVH.Common.Plugins
             assemblies.Add(Assembly.GetCallingAssembly());
 
             // Does the directory exist?
-            if (!Directory.Exists(Directory.GetCurrentDirectory() + "/plugins/"))
+            if (!Directory.Exists(CurrentDirectory + "/plugins/"))
                 return;
 
             // Get all Assembly files
-            foreach (String file in Directory.GetFiles(Directory.GetCurrentDirectory() + "/plugins/", "*.dll", SearchOption.AllDirectories))
+            foreach (String file in Directory.GetFiles(CurrentDirectory + "/plugins/", "*.dll", SearchOption.AllDirectories))
             {
                 assemblies.Add(Assembly.Load(File.ReadAllBytes(file)));
             }

@@ -22,6 +22,11 @@ namespace HVH.Common.Settings
         /// Logger
         /// </summary>
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        
+        public static String CurrentDirectory
+        {
+            get { return Path.GetDirectoryName(typeof(Settings<T>).Assembly.Location); }
+        }
 
         /// <summary>
         /// The global settings instance
@@ -36,7 +41,7 @@ namespace HVH.Common.Settings
                     {
                         // Load the settings file
                         IniFile file = new IniFile();
-                        file.Load(Directory.GetCurrentDirectory() + "/settings.ini");
+                        file.Load(CurrentDirectory + "/settings.ini");
                         SectionNameAttribute[] att = typeof(T).GetCustomAttributes(typeof(SectionNameAttribute), false) as SectionNameAttribute[];
                         IniSection section = file.Sections[att[0].name];
 
